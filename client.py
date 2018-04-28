@@ -130,7 +130,7 @@ class POP3Client:
                     letter = self.get_letter_top(int(top_match.group("id")),
                                                  int(top_match.group("lines")))
                     for line in letter.data:
-                        print(line.decode('ascii'))
+                        print(line.decode('utf-8', errors="replace"))
                 elif head_match:
                     letter = self.get_letter_top(int(head_match.group("id")))
                     print_letter_headers(letter)
